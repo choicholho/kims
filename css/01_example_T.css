@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/* reset ************************************************ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a { 
+    text-decoration: none;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    /* 브라우저 폰트 크기 100%사용 */
+    font-weight: normal;/* normal = 400 */
+}
+
+/* 공통으로 사용할 디자인 */
+/* float 해제를 위한 클래스 */
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400px;
+}
+
+
+.container {
+    background-color: skyblue;
+    padding: 100px 0;
+}
+
+.recipe {
+    width: 1280px;
+    margin: 0 auto; /*가운데 정렬하려면 블럭요소여야함 */
+
+}
+
+.recipe .title {
+    /* background-color: greenyellow; */
+    margin-bottom: 50px;                                                                           
+}
+
+.recipe .title h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+.recipe .title p {
+    font-size: 20px;
+    color: #555;
+}
+
+
+
+.recipe .content {
+    /* background-color: blueviolet; */
+
+}
+
+/* float된 요소에 width 값이 설정되지 않았을 경우, 내용만큼의 너비(width)를 갖는다! */
+
+.recipe .content .box {
+
+    /* 가로 비율에 맞춰서 설정됨 */
+    margin-bottom: 2%;
+
+    float: left;
+    /* 1) 전체 공간의 1/4을 너비로 사용 */
+    /* width: 25%;
+    padding: 0 20px;
+    box-sizing: border-box; */
+
+    /* 2) 여백을 제외한 너비설정 */
+    width: 23.5%;
+    /* margin-right: 2%; */
+   
+}
+
+
+
+.recipe .content .box ~ .box {
+    margin-left: 2%;
+}
+
+/* 5번째/9번째 ..마다 왼쪽 여백으로 줄이 밀리고 있어서 4n+1을 왼쪽 margin 0으로 해결  */
+.recipe .content .box:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+
+
+
+
+/* .recipe .content .box:last-child {
+    margin-right: 0;
+} */
+
+.recipe .content .box img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    /* x y 블러 컬러 */
+}
+.recipe .content .box  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.recipe .content .box  h3 a {
+    color: #333;
+}
+
+.recipe .content .box  h3 a:hover {
+    text-decoration: underline;
+    color: turquoise;
+}
+
+.recipe .content .box  p {
+    font-size: 18px;
+    color: #666;
+}
+
